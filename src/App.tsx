@@ -1,16 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { BookList } from "./features/book/components/bookList";
-import { RecoilRoot } from "recoil";
+import { BookList } from "./features/list-books/ui/bookList";
 
 function App() {
   return (
-    <RecoilRoot>
-      <div className="App">
+    <div className="App">
+      <div style={{ padding: "10vw" }}>
         <BookList />
       </div>
-    </RecoilRoot>
+    </div>
   );
 }
 
