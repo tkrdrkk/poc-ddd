@@ -9,7 +9,6 @@ const bookApiEndpoint = axios.create({
 export const bookRepository: BookRepository = {
   listBooks: async () => {
     const res = await bookApiEndpoint.get<BookDO[]>("");
-    console.log(res.data);
     return res.data;
   },
 };

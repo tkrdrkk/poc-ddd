@@ -9,8 +9,9 @@ export const BookCard = ({ book }: { book: ListBookVO }) => {
         <Typography variant="h6" gutterBottom>
           {book.title}
         </Typography>
-        <Typography variant="body1">{book.description}</Typography>
-        <Typography variant="caption">{book.pages}</Typography>
+        <Typography variant="subtitle1">by {book.author}</Typography>
+        <Typography variant="body1">summary: {book.description}</Typography>
+        <Typography variant="caption">pg.{book.pages}</Typography>
       </CardContent>
     </Card>
   );
