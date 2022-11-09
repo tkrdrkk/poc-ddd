@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { listBooks } from "../../../entities/service/listBooks";
+import { listBooks } from "../../../entities/book/service/listBooks";
 import { ListBookView } from "../types";
 
 // TODO tanstack-query
