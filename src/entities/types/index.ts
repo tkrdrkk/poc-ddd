@@ -16,8 +16,13 @@ export type BookData = Book;
 
 /**
  * リポジトリ
- * TODO CQRS風味にしてみる
+ * TODO CQRS風味にしてみる？
  */
-export type BookRepository = {
+export type BookQueryRepository = {
   listBooks: () => Promise<BookData[]>;
+};
+
+export type CreateBookParams = Omit<Book, "id">;
+export type BookMutationRepository = {
+  createBook: (params: CreateBookParams) => Promise<void>;
 };
