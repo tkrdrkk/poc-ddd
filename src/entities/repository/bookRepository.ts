@@ -1,6 +1,5 @@
 import axios from "axios";
-import { BookDO } from "../../entities";
-import { BookRepository } from "./bookRepositoryType";
+import { Book, BookRepository } from "../types";
 
 const bookApiEndpoint = axios.create({
   baseURL: "http://localhost:3004/books",
@@ -8,7 +7,7 @@ const bookApiEndpoint = axios.create({
 
 export const bookRepository: BookRepository = {
   listBooks: async () => {
-    const res = await bookApiEndpoint.get<BookDO[]>("");
+    const res = await bookApiEndpoint.get<Book[]>("");
     return res.data;
   },
 };
