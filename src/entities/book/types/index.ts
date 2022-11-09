@@ -12,7 +12,7 @@ export type Book = {
 /**
  * DTO
  */
-export type BookData = Book;
+export type BookData = Readonly<Book>;
 
 /**
  * リポジトリ
