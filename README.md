@@ -5,6 +5,8 @@
 - [ ] CQRS 導入
 - [ ] ValueObject 導入
   - Mutation 実装時に一緒にやることになるのではと思っている
+- [ ] DI Container
+  - そもそも React フレンドリーな DI コンテナがあるのか？
 
 ## Directory
 

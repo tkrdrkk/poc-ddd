@@ -19,6 +19,7 @@ export const bookQueryRepository: BookQueryRepository = {
 
 export const bookMutationRepository: BookMutationRepository = {
   createBook: async (params: CreateBookParams) => {
-    console.log(params);
+    const res = await bookApiEndpoint.post("", params);
+    console.log(res);
   },
 };

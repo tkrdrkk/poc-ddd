@@ -6,9 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "import-access",
-    "unused-imports"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

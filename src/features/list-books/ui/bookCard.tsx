@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
+import { ListBookView } from "features/list-books/types";
 import React from "react";
-import { ListBookView } from "../types";
 
 export const BookCard = ({ book }: { book: ListBookView }) => {
   return (

@@ -1,22 +1,23 @@
-import { useCallback, useEffect, useState } from "react";
-import { listBooks } from "../../../entities/book/service/listBooks";
-import { ListBookView } from "../types";
+import { useQuery } from "@tanstack/react-query";
+import { listBooks } from "entities/book/service/listBooks";
 
-// TODO tanstack-query
-export const useBooks = () => {
-  const [books, setBooks] = useState<ListBookView[]>([]);
-  const fetchBooks = useCallback(() => {
-    listBooks().then((res) => {
-      const bookViewList = res.map((b) => ({
-        ...b,
-        pages: b.pages.toString(),
-      }));
-      setBooks(bookViewList);
-    });
-  }, []);
+export const useListBooks = () => {
+  const { data, isError, isRefetching, isLoading, refetch } = useQuery({
+    queryKey: ["book-list"],
+    queryFn: listBooks,
+  });
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-  return { books, fetchBooks };
+  // VOへの変換
+  const books = data?.map((b) => ({
+    ...b,
+    pages: b.pages.toString(),
+  }));
+
+  return {
+    books,
+    isError,
+    isLoading,
+    isRefetching,
+    refetch,
+  };
 };
